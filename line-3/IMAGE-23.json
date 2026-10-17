@@ -1,0 +1,23 @@
+{
+  "base_sha256": "0838cb9edc0835a9d55dc025d3f1c5f17840bac5d9021157bdda8a340e255995",
+  "wall_sha256": "48761fcc9a900cbecb671d2422eed0828d6efc0497bcb21d093953c96f8337f8",
+  "width": 1254,
+  "height": 1254,
+  "format": "PNG",
+  "mode": "RGB",
+  "bytes": 3939328,
+  "changed_pixels": 32271,
+  "addition_rectangle_xyxy_exclusive": [
+    545,
+    790,
+    900,
+    982
+  ],
+  "changed_bounds_inclusive": [
+    548,
+    796,
+    895,
+    981
+  ],
+  "outside_rectangle_pixels_identical": true
+}

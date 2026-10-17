@@ -1,0 +1,49 @@
+{
+  "number": 23,
+  "tool": "Search Receipt",
+  "checks": {
+    "new_behavioral_tests_passed": 16,
+    "ancestor_tests_passed": 22,
+    "zto_demo_citation": "zto.md:1-9",
+    "zto_documents_verified": 3,
+    "zto_receipt_sha256": "eb68004d99b400202f289750fd24909060cd440a5d69996585ce3c298683f3fb",
+    "unfamiliar_corpus_trial": "TRIAL-23.json",
+    "goal_bytes_unchanged": true,
+    "all_22_older_records_unchanged": true,
+    "scope_check_passed": true
+  },
+  "wall": {
+    "path": "artifacts/line-3/wall-v3.png",
+    "format": "PNG",
+    "mode": "RGB",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 3939328,
+    "sha256": "48761fcc9a900cbecb671d2422eed0828d6efc0497bcb21d093953c96f8337f8",
+    "untracked": true
+  },
+  "successor_wall": {
+    "path": "artifacts/line-3/wall.png",
+    "relative_symlink": "wall-v3.png"
+  },
+  "preview": {
+    "path": "dist/line-3/23.jpg",
+    "format": "JPEG",
+    "mode": "RGB",
+    "width": 512,
+    "height": 512,
+    "bytes": 70690,
+    "sha256": "91021a87e54f1d41456779f28b889e7942462f044722aac719277d87cf5ed151"
+  },
+  "visual_review": {
+    "method": "Viewed full final PNG and decoded JPEG; checked pigment, inherited figures, cave landmarks, hands and absence of text.",
+    "ancestor_pixels_outside_addition_unchanged": true,
+    "new_hands_or_handprints": 0,
+    "unmet_visual_requirements": [],
+    "limitations": [
+      "New small worn pigment loses stone and cord detail in thumbnail.",
+      "Ancestor gripping digits remain partly curled and are preserved without alteration.",
+      "Visual assessment is subjective; measurements are in IMAGE-23.json."
+    ]
+  }
+}

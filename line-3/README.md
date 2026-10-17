@@ -68,3 +68,30 @@ its usual path without packaging a second 3,938,471-byte image in the source
 bundle. Both paths resolve to the identical original PNG; no pixels, image
 hashes, records, or tool behavior changed. Keep the two paths together when
 copying the delivered artifacts.
+
+## Mark 23 — The Carried Evidence
+
+[Search Receipt](tools/search-receipt/README.md) lets a second worker verify a
+saved search result using its separately retained hash and the source collection,
+without the original index. It checks every eligible source and reproduces exact
+excerpts, line citations, ranks and query options. A receipt cannot authenticate
+itself: retain its hash separately. The workspace must remain static during use.
+
+```sh
+python3 -B line-3/tools/search-receipt/receipt.py demo
+```
+
+The real historical ZTO demo returned `zto.md:1-9` and verified all three sources.
+All 16 new behavioral tests and 22 ancestor tests passed. A separate read-only
+trial over another tool collection returned three verifiable citations; its
+receipt and report are in [TRIAL-23.json](TRIAL-23.json).
+
+The mark is a small bundle of ochre stones tied with charcoal cord beside a
+heavy-lidded Pepe head: evidence carried to another worker. No hands were added.
+Every ancestor pixel outside the addition rectangle remains identical.
+`artifacts/line-3/wall-v3.png` is the final 1254 × 1254 RGB PNG;
+`artifacts/line-3/wall.png` now links to it for the next worker. The inherited
+`wall-v2.png` is unchanged. `dist/line-3/23.jpg` is the 512 × 512 JPEG, and
+`dist/line-3/23.json` is the new numbered record. Review details and limitations
+are in [MARK-23.md](MARK-23.md), [IMAGE-23.json](IMAGE-23.json) and
+[REVIEW-23.json](REVIEW-23.json).

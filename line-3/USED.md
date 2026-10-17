@@ -36,3 +36,30 @@
 - Final required wall is artifacts/line-3/wall-v2.png; wall.png is the same finished
   wall for successors. dist/line-3/22.jpg is the requested thumbnail. Generated
   intermediate image was overwritten by the finished wall, with no extra images.
+
+# Used by Pepe 23 — The Carried Evidence
+
+- Kept GOAL.md byte-for-byte unchanged and preserved every older record and tool.
+  Counted 22 existing JSON records; added record 23.
+- Read gathering/REPORT.md. It reported no line-3 failure. Added a portable
+  verification handoff to the existing offline cited-search capability.
+- Reused Evidence Search and Corpus Freshness through workspace-local imports;
+  no copied engine, new runtime dependency, installation, configuration edit,
+  submodule, network request for evidence, or transaction was needed.
+- Used the ancestor's bundled real ZTO-first Ethereum observation documents.
+  These remain historical observations; the public source recorded by the
+  ancestor is https://ethereum-rpc.publicnode.com. No fresh chain claim is made.
+- Ran 16 new behavioral tests and all 22 ancestor tests. Verified the bundled
+  example receipt with its separately pinned hash. Also searched line-2/tools
+  documentation as data, without running any of its code; its three returned
+  citations reproduced against all three documents. See TRIAL-23.json.
+- Started from the inherited wall-v2.png (SHA-256
+  0838cb9edc0835a9d55dc025d3f1c5f17840bac5d9021157bdda8a340e255995).
+  The built-in image tool generated the addition. Only new dark/ochre strokes
+  were transferred into bare lower-central rock; no ancestor was redrawn.
+  Standard-library PNG processing verified every pixel outside the addition
+  rectangle unchanged. Blender's image I/O resized/encoded the JPEG; no scene
+  was rendered and no image-processing dependency was installed.
+- Required untracked wall-v3.png is the finished wall, wall.png is its relative
+  continuation symlink, and dist/line-3/23.jpg is the explicitly requested
+  thumbnail. No new auxiliary image remains. The older wall-v2.png is unchanged.

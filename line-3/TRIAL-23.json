@@ -1,0 +1,100 @@
+{
+  "purpose": "Read a different working tool collection as an unfamiliar corpus; no source code executed.",
+  "corpus": "line-2/tools",
+  "network_used": false,
+  "receipt": {
+    "format": "evidence-search-receipt/v1",
+    "request": {
+      "query": "Ethereum storage proof",
+      "limit": 3,
+      "require_all": false
+    },
+    "sources": [
+      {
+        "path": "code-witness/README.md",
+        "sha256": "d81a261e51c710a37cdfd6186378763ada40c3952d6cd3f07c9d72c3b9038823"
+      },
+      {
+        "path": "header-anchor/README.md",
+        "sha256": "a3f091a2dbec59385ee6c9e2c8530feba16977c25acfc61f9bfdbef85652099f"
+      },
+      {
+        "path": "state-witness/README.md",
+        "sha256": "74a851cd83945efb81a267d840156aa3df80ab109f833e4a3fac5a93b878f103"
+      }
+    ],
+    "result": {
+      "format": "evidence-search-results/v1",
+      "query": "Ethereum storage proof",
+      "terms": [
+        "ethereum",
+        "proof",
+        "storage"
+      ],
+      "require_all": false,
+      "indexed_documents": 3,
+      "indexed_passages": 37,
+      "hits": [
+        {
+          "path": "state-witness/README.md",
+          "line_start": 25,
+          "line_end": 33,
+          "citation": "state-witness/README.md:25-33",
+          "sha256": "74a851cd83945efb81a267d840156aa3df80ab109f833e4a3fac5a93b878f103",
+          "source_verified": true,
+          "score": 3.08772039,
+          "matched_terms": [
+            "ethereum",
+            "proof",
+            "storage"
+          ],
+          "text": "The pool witness is for Uniswap v4 PoolManager `0x000000000004444c5dc75cb358380d2e3de08a90` and the assignment's ZTO/IMD pool ID `0x888b07bd282f587d3c6b0fcb23e7fc55bbb33abe8910dd7492db815dc8dc5592`. [Uniswap's StateLibrary](https://github.com/Uniswap/v4-core/blob/main/src/libraries/StateLibrary.sol) locates pool slot0 at `keccak256(poolId || uint256(6))` (both operands 32 bytes). This derives storage key `0x85763e16f60121d4266264cb693cca4d6bdb9e98ff9cc3d698d892d90342971b`; its proven raw value was `0x30d400000001b32f000000000000010675ff9d949ea2d3c11613bc41`. The tool deliberately returns the raw word; it does not turn this into a price, guess token ordering, or infer executable swap bounds.\n\nThe original block was requested with `finalized`; that label and the block hash are RPC claims. The proof verifies state relative to the root, not Ethereum consensus or the label. Public RPC source: [Ethereum PublicNode](https://ethereum-rpc.publicnode.com). The fixture is a historical observation, not a current quote.\n\nAll **30 offline tests passed**, covering real witnesses, nonzero storage, empty tries, leaf divergence, missing children, compact paths, inline nodes, malformed RLP, duplicate JSON keys, altered account/storage claims, wrong roots/addresses, exact requested-slot binding, and read-only capture behavior. Known hash vectors and published RLP examples also passed.\n\n```sh\npython3 -B -m unittest discover -s line-2/tools/state-witness -p 'test_*.py' -v\n```"
+        },
+        {
+          "path": "state-witness/README.md",
+          "line_start": 9,
+          "line_end": 17,
+          "citation": "state-witness/README.md:9-17",
+          "sha256": "74a851cd83945efb81a267d840156aa3df80ab109f833e4a3fac5a93b878f103",
+          "source_verified": true,
+          "score": 3.07720586,
+          "matched_terms": [
+            "ethereum",
+            "proof",
+            "storage"
+          ],
+          "text": "```\n\nIt prints `\"verified\": true`, the PoolManager account's proven fields, and a nonzero storage inclusion proof for the ZTO/IMD pool. `demo` without `--pool` instead checks ZTO's contract account and proves that its raw slots 0 and 1 are absent. Those zero values are observed on chain, not token balances, defaults, or example stand-ins. No storage-layout meaning is assigned to those two ZTO slots.\n\nThe first round builds the verification layer of the line's goal. It implements Ethereum Keccak-256, canonical RLP decoding, hashed and inline Merkle Patricia trie traversal, account inclusion/absence, storage inclusion/absence, and binding to the exact expected address and storage slot set. Missing nodes, altered hashes, mismatched claims, duplicate slots, and malformed encodings fail closed.\n\n## What happened when tried\n\nOn 2026-10-17, the read-only mainnet capture succeeded. Both checked-in witnesses refer to block **26,212,390** (`0x18ff826`), hash `0x38dc4deb12174972d332cc1f95008b25ea87434f420ce0a51938e1b28755e9dc`, with state root:"
+        },
+        {
+          "path": "header-anchor/README.md",
+          "line_start": 1,
+          "line_end": 10,
+          "citation": "header-anchor/README.md:1-10",
+          "sha256": "a3f091a2dbec59385ee6c9e2c8530feba16977c25acfc61f9bfdbef85652099f",
+          "source_verified": true,
+          "score": 2.58809612,
+          "matched_terms": [
+            "ethereum",
+            "storage"
+          ],
+          "text": "# Header Anchor\n\nVerify Ethereum account and storage proofs against an execution **block hash**\nthat you trust. The tool reconstructs the execution header's canonical RLP,\ncomputes Ethereum Keccak-256, checks the expected hash, extracts its committed\nstate root, and passes that root to the existing State Witness verifier.\n\nFrom the repository root, with Python 3.9+ and no network or installation:\n\n```sh"
+        }
+      ]
+    }
+  },
+  "verification": {
+    "format": "evidence-search-receipt-check/v1",
+    "verified": true,
+    "receipt_sha256": "ed83d70b3c509c0e002259dd287de8e371fabd4ff444e343c489720642c6f0c1",
+    "expected_sha256": "ed83d70b3c509c0e002259dd287de8e371fabd4ff444e343c489720642c6f0c1",
+    "hash_matches": true,
+    "sources": {
+      "fresh": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "result_matches": true,
+    "reason": "verified"
+  }
+}

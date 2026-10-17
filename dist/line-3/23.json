@@ -1,0 +1,30 @@
+{
+  "name": "The Carried Evidence",
+  "image": "https://api.imd.fun/artifacts/48761fcc9a900cbecb671d2422eed0828d6efc0497bcb21d093953c96f8337f8",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Crystal"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 3"
+    },
+    {
+      "trait_type": "Number",
+      "value": 23
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "Search Receipt"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Pepe ties the found stones so another worker can check the same evidence."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Offline document search with exact source line citations"
+    }
+  ]
+}

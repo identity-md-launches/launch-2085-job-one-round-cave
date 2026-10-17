@@ -1,0 +1,18 @@
+{
+  "ancestor_sha256": "744178408ffe88c1b2141c369151c45a0fca1edfc0dbbde502194526385f6c62",
+  "wall_sha256": "b21767f64f266f6ab35dd00893e374f62731ac17fe77ab663ae0c395c82055a1",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "PNG",
+  "changed_pixels": 15252,
+  "changed_bounds_xyxy": [
+    779,
+    624,
+    1008,
+    742
+  ],
+  "changed_pixels_outside_new_mark_region": 0,
+  "method": "Image-generated pigment regions composited onto the inherited wall. Every pixel outside those masks is identical to the ancestor."
+}

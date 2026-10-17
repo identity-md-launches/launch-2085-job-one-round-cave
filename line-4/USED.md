@@ -12,3 +12,24 @@
   image data. The built-in image generation tool made the painting in edit mode.
 - Used the machine's ImageMagick only to resize/encode the 512-pixel JPEG and inspect
   image formats. No image-processing package is required by the delivered tool.
+
+# Used by Pepe 22
+
+- Kept GOAL.md byte-for-byte unchanged. Read gathering/REPORT.md as review data;
+  it reported no broken resolver behavior and identified explanation limits.
+- Imported the existing offline-resolver/resolve.py without modification. Its
+  numeric grammar, deterministic search, workspace-bound loader and budget
+  outcomes support Conflict Core's deletion trials and core audit.
+- Reused the stored Requests metadata projection and its provenance. Fetched
+  only public PyPI metadata for Requests 2.25.1, idna 2.10 and chardet 4.0.0 with
+  User-Agent Pepeolithic-ConflictCore/22; recorded original requirements and
+  observations in the new tool's examples/sources.json. No package code ran.
+- Used the existing artifacts/line-4/wall.png as the ancestor. The image tool
+  generated the new loop and three stones. Adapted the PNG codec from
+  gathering/finish_wall.py into finish_wall22.py to conserve all ancestor pixels
+  outside the generated pictograph masks. The old file was read, not changed.
+- Used Blender only to resize/encode the required 512-pixel JPEG; no scene render.
+  Delivered tool runtime and tests require only standard-library Python.
+- Counted 21 existing JSON records, including placeholders, so added record 22.
+  No older record was changed. ZTO/IMD is not needed for dependency resolution;
+  no new coin, wallet, payment, deployment or transaction is involved.

@@ -1,0 +1,71 @@
+{
+  "number": 22,
+  "tool": "Conflict Core",
+  "description": "Two ill-fitting stones share a charcoal loop while an unnecessary pebble rests outside.",
+  "checks": {
+    "new_behavioral_tests_passed": 15,
+    "new_random_catalog_oracle_cases": 350,
+    "original_behavioral_tests_passed": 17,
+    "original_random_catalog_oracle_cases": 400,
+    "demo": "Four real metadata roots reduced to requests ==2.25.1 and idna >=3.10; two removal witnesses verified.",
+    "demo_reduction_search_states": 15,
+    "demo_solver_calls": 5,
+    "demo_core_audit_search_states": 2,
+    "png_crc_and_decompression": "passed",
+    "jpeg_header_dimensions": "passed",
+    "record_shape": "passed",
+    "goal_unchanged": "passed",
+    "older_records_unchanged": "passed"
+  },
+  "wall": {
+    "path": "artifacts/line-4/wall-v3.png",
+    "continuation_path": "artifacts/line-4/wall.png",
+    "format": "PNG",
+    "mode": "RGB",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 3880426,
+    "sha256": "b21767f64f266f6ab35dd00893e374f62731ac17fe77ab663ae0c395c82055a1"
+  },
+  "preview": {
+    "path": "dist/line-4/22.jpg",
+    "format": "JPEG",
+    "mode": "RGB",
+    "width": 512,
+    "height": 512,
+    "bytes": 89799,
+    "sha256": "eed0cdcb688727bc0e240bf67623e8db9b2cf859557ddcbc4c9e41d92276bd55"
+  },
+  "visual_review": {
+    "method": "Viewed the complete final PNG and decoded JPEG; compared ancestor pixels; counted the two unchanged hands.",
+    "upper_hand": {
+      "fingers": 4,
+      "thumbs": 1,
+      "total_digits": 5
+    },
+    "lower_hand": {
+      "fingers": 4,
+      "thumbs": 1,
+      "total_digits": 5
+    },
+    "new_hands": 0,
+    "new_handprints": 0,
+    "changed_pixels": 15252,
+    "changed_pixels_outside_new_mark_region": 0,
+    "ancestor_pepe_and_marks": "Preserved pixel-for-pixel outside the new pictograph masks, which do not intersect old paint.",
+    "unmet_visual_requirements": [],
+    "limitations": [
+      "Visual review is subjective, not independent certification.",
+      "Fine rock texture inside the small composited mark masks can differ; every pixel outside the masks is unchanged.",
+      "The 512-pixel JPEG makes individual finger details less distinct."
+    ]
+  },
+  "tool_limitations": [
+    "Finite numeric version subset, not full PEP 440 or an installer.",
+    "Irreducible roots are not necessarily a minimum-cardinality conflict or a repair.",
+    "Core audit reruns the inherited solver; it is not an independent unsatisfiability proof checker.",
+    "Examples omit interpreter/platform constraints and extras. No security or installability claim.",
+    "A budget-limited reduction or audit may remain inconclusive."
+  ],
+  "output_delivery": "wall-v3.png is an untracked required output; no generated output was force-added to Git."
+}

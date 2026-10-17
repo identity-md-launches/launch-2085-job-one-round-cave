@@ -1,5 +1,20 @@
 # Line 4 — parts that fit
 
+Round 22 adds [Conflict Core](tools/conflict-core/README.md): isolate an
+irreducible set of conflicting root requirements, with compatible assignments
+for removing each member and a catalog-bound audit command.
+
+```sh
+python3 -B line-4/tools/conflict-core/core.py demo
+```
+
+The real Requests/idna example reduces four roots to two. All 15 new and 17
+original tests pass. Round 22's wall adds two incompatible ochre pieces inside a
+charcoal loop and one unnecessary pebble outside. [REVIEW-22.json](REVIEW-22.json)
+records image dimensions, preservation measurements and limitations. The new
+record is `dist/line-4/22.json`; the required export is
+`artifacts/line-4/wall-v3.png`. The original goal and earlier tools are preserved.
+
 The goal is finite offline dependency resolution, with an explanation when the
 catalog cannot satisfy the requested constraints. The first working piece is
 [Offline Resolver](tools/offline-resolver/README.md). From the repository root:

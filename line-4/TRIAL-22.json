@@ -1,0 +1,92 @@
+{
+  "audit": {
+    "claim": "unsatisfiable",
+    "core_search_steps": 2,
+    "method": "Independent assignment checks and inherited-solver core search; not an independently certified unsatisfiability proof.",
+    "minimality": "irreducible",
+    "removal_witnesses_checked": 2,
+    "status": "verified"
+  },
+  "report": {
+    "catalog_sha256": "a6e92f561ad112d9f4f311ea4e6100d7694254c6c7a77df3605109c67d3339d9",
+    "core": {
+      "idna": ">=3.10",
+      "requests": "==2.25.1"
+    },
+    "dropped_roots": {
+      "certifi": ">=2017.4.17",
+      "urllib3": "<2"
+    },
+    "explanation": "The core has no solution in this finite catalog. Each removal witness satisfies all other core roots. Irreducible means no single core root can be removed; it does not mean smallest possible core or a suggested repair.",
+    "minimality": "irreducible",
+    "removal_witnesses": {
+      "idna": {
+        "certifi": "2025.10.5",
+        "chardet": "4.0.0",
+        "idna": "2.10",
+        "requests": "2.25.1",
+        "urllib3": "1.26.20"
+      },
+      "requests": {
+        "idna": "3.11"
+      }
+    },
+    "representative_conflict": {
+      "available_versions": [
+        "3.11",
+        "3.10",
+        "2.10"
+      ],
+      "branch": {
+        "requests": "2.25.1"
+      },
+      "package": "idna",
+      "requirements": [
+        {
+          "constraint": ">=3.10",
+          "source": "root"
+        },
+        {
+          "constraint": ">=2.5,<3",
+          "source": "requests@2.25.1"
+        }
+      ],
+      "selected_version": null
+    },
+    "roots": {
+      "certifi": ">=2017.4.17",
+      "idna": ">=3.10",
+      "requests": "==2.25.1",
+      "urllib3": "<2"
+    },
+    "schema": 1,
+    "search": {
+      "max_steps": 10000,
+      "solver_calls": 5,
+      "steps": 15
+    },
+    "status": "unsatisfiable",
+    "trials": [
+      {
+        "removed_root": "certifi",
+        "status": "unsatisfiable",
+        "steps": 2
+      },
+      {
+        "removed_root": "idna",
+        "status": "resolved",
+        "steps": 6
+      },
+      {
+        "removed_root": "requests",
+        "status": "resolved",
+        "steps": 3
+      },
+      {
+        "removed_root": "urllib3",
+        "status": "unsatisfiable",
+        "steps": 2
+      }
+    ]
+  }
+}

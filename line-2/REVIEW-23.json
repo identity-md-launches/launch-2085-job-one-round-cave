@@ -1,0 +1,77 @@
+{
+  "round": 23,
+  "images": [
+    {
+      "path": "artifacts/line-2/wall-v3.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "channels": "RGB",
+      "bytes": 3935237,
+      "sha256": "9f2209ce67fb14f2be4fd40f144a978334103c6a67347eefc0312948aec73202"
+    },
+    {
+      "path": "artifacts/line-2/wall.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "channels": "RGB",
+      "bytes": 3935237,
+      "sha256": "9f2209ce67fb14f2be4fd40f144a978334103c6a67347eefc0312948aec73202"
+    },
+    {
+      "path": "dist/line-2/23.jpg",
+      "format": "JPEG",
+      "width": 512,
+      "height": 512,
+      "channels": "RGB",
+      "bytes": 64593,
+      "sha256": "6d8e2168be10f72c1382e3f61bf23c9532afb1a22f2389b579474fcaf8cf7571"
+    }
+  ],
+  "record": "dist/line-2/23.json",
+  "goalUnchanged": true,
+  "olderRecordsUnchanged": 22,
+  "offlineTests": {
+    "codeWitness": 9,
+    "headerAnchor": 14,
+    "stateWitness": 30,
+    "passed": 53,
+    "failed": 0
+  },
+  "visualReview": {
+    "method": "Local full PNG and decoded JPEG inspection, plus RGB comparison against Git ancestor.",
+    "recognizablePepe": true,
+    "digitsPerAncestorHand": [
+      5,
+      5
+    ],
+    "newHandsOrHandprints": 0,
+    "ancestorPaintingRetained": true,
+    "prohibitedVisualElementsObserved": false,
+    "changedPixelCount": 20500,
+    "changedPixelBoundsInclusive": [
+      885,
+      670,
+      1089,
+      769
+    ],
+    "pixelsChangedOutsideAdditionPatch": 0,
+    "externalVisualApproval": false
+  },
+  "unmetRequirements": [
+    "Fine rock texture within the addition patch is generative; every pixel outside it is preserved.",
+    "The explicitly required beside-record JPEG is in dist/line-2, following existing layout despite the conflicting blanket picture-location restriction."
+  ],
+  "promptDeviation": "The joining line is charcoal rather than chalk; both are permitted earth pigments.",
+  "toolLimitations": [
+    "Caller must authenticate checkpoint chain, canonicality and finality independently.",
+    "Checks supplied stored code bytes, not source, ABI, layout, proxy/delegation targets or execution behavior.",
+    "Historical proof/header fixtures are inherited RPC observations; latest-fetched code matched the historical commitment, with no current-state claim."
+  ],
+  "continuationStorage": {
+    "path": "artifacts/line-2/wall.png",
+    "relativeSymlink": "wall-v3.png",
+    "reason": "Avoid duplicate full PNG payload; named output is delivered separately."
+  }
+}

@@ -41,3 +41,18 @@ authentication and finality remain external. [Round 22](ROUND-22.md) records the
 new root-in-stone painting, image prompt, preservation method and limitations;
 [review measurements](REVIEW-22.json) describe the finished 1254-pixel PNGs and
 512-pixel JPEG. The first-round account above remains a historical record.
+
+## Round 23 addition
+
+[Code Witness](tools/code-witness/README.md) now checks supplied account code
+bytes against the header-anchored account proof. Its offline real ZTO demo:
+
+```sh
+python3 -B line-2/tools/code-witness/code_witness.py demo
+```
+
+Nine new tests and all 44 ancestor tests passed. This proves stored-code byte
+identity, not source, ABI, storage layout or execution behavior. The checkpoint
+still needs independent authentication. [Round 23](ROUND-23.md) and
+[review measurements](REVIEW-23.json) record the matching-stones painting,
+1254-pixel PNG outputs, 512-pixel JPEG, preservation check and known limits.

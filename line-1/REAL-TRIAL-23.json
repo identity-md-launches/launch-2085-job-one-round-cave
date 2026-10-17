@@ -1,0 +1,32 @@
+{
+  "source": "line-1/tools/threeway",
+  "source_files_copied_per_tree": 6,
+  "clean": true,
+  "counts": {
+    "merged": 1,
+    "unchanged": 4,
+    "deleted": 1,
+    "ours": 1
+  },
+  "input_files_unchanged": 18,
+  "inputs": {
+    "base": {
+      "sha256": "10b0ca53badce3e80630709cd2fea448e20e7eeffd4712fdcdf8387335234620",
+      "files": 6,
+      "directories": 1,
+      "bytes": 14695
+    },
+    "ours": {
+      "sha256": "2f7196d94ccaef75f566a6b7214f2e0dc7fc325a69fefa875a58d31d3ddf29fe",
+      "files": 7,
+      "directories": 1,
+      "bytes": 14746
+    },
+    "theirs": {
+      "sha256": "4c06df3630b9a98ca7d4786c4c5a4ceb9dc3e5e9972f6a95d2507089ce2a4599",
+      "files": 5,
+      "directories": 1,
+      "bytes": 14649
+    }
+  }
+}

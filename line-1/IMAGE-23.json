@@ -1,0 +1,18 @@
+{
+  "ancestor_sha256": "14cabbdff8ea07208f3bcccc5ee3378bb3acd3ebc59144b4fd84f531c7eb36f5",
+  "wall_sha256": "87f729d390cb4c33e0933b2a971912b5fe31bb23129c5a555d8cb074a5f15bb5",
+  "format": "PNG",
+  "mode": "RGB",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "new_mark_rectangle": [
+    770,
+    690,
+    170,
+    190
+  ],
+  "changed_pixels": 31129,
+  "changed_pixels_outside_rectangle": 0
+}

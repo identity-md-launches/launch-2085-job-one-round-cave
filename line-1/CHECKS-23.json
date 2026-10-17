@@ -1,0 +1,41 @@
+{
+  "tests": {
+    "tree_review": 25,
+    "threeway": 23,
+    "merge_review": 13,
+    "total_passed": 61
+  },
+  "wall": {
+    "path": "artifacts/line-1/wall-v3.png",
+    "format": "PNG",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "sha256": "87f729d390cb4c33e0933b2a971912b5fe31bb23129c5a555d8cb074a5f15bb5",
+    "bytes": 3976399
+  },
+  "thumbnail": {
+    "path": "dist/line-1/23.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 96156
+  },
+  "preservation": {
+    "changed_pixels": 31129,
+    "outside_new_mark_rectangle": 0,
+    "old_source_and_record_files_unchanged": 34,
+    "goal_unchanged": true
+  },
+  "record_schema_valid": true,
+  "required_wall_untracked": true,
+  "changed_paths_in_scope": true,
+  "unmet_requirements": [
+    "JPEG is beside its JSON as explicitly requested; this conflicts with the blanket restriction on pictures outside artifacts.",
+    "Rock texture inside the small new-mark rectangle is generated rather than pixel-identical."
+  ],
+  "authority": "Local checks only; not independent certification."
+}

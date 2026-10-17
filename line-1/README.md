@@ -20,3 +20,13 @@ Use case: precise-object-edit. Edit target: the supplied square bare cave wall. 
 ## Step 22: review before joining
 
 `tools/merge-review` adds contributor diffs, exact-byte input fingerprints and contextual conflict packets while keeping the original merger unchanged. Run `python3 -B line-1/tools/merge-review/review.py --demo clean` from the workspace root. See `STEP-22.md` for this step's output dimensions, preservation check and limitations. The new wall has a small reviewing eye above the old trails; all older marks are preserved.
+
+## Step 23: review a directory tree
+
+`tools/tree-review` extends review to additions, deletions and concurrent edits
+across three directories. It explicitly flags delete/modify and file/directory
+conflicts, retains contributor diffs, and never modifies its inputs. Run
+`python3 -B line-1/tools/tree-review/tree_review.py --demo clean` from the workspace
+root. All 61 line-1 tests passed. The new wall's small ochre twig holds three chalk
+pebbles; ancestral marks remain unchanged. See `STEP-23.md` for output dimensions,
+verification and limitations, and the tool README for use on your own text files.

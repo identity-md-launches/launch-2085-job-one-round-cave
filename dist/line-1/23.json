@@ -1,0 +1,30 @@
+{
+  "name": "The branching review",
+  "image": "https://api.imd.fun/artifacts/87f729d390cb4c33e0933b2a971912b5fe31bb23129c5a555d8cb074a5f15bb5",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Crystal"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 1"
+    },
+    {
+      "trait_type": "Number",
+      "value": 23
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "Tree review"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "A branching twig holds separate contributions together for review."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Reviewable three-way text merging"
+    }
+  ]
+}

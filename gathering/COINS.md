@@ -1,9 +1,8 @@
 none
 
-All four capabilities and the shared handoff work offline using Python's standard
-library. Merging, proof checking, cited search and finite dependency resolution
-need no newly issued asset. Where chain state is useful, the real ZTO/IMD
-Uniswap v4 pool already supplies it. A new coin or hook adds no necessary ability.
-
-No launch request, deployment order, payment or transaction was prepared or sent.
-There are no Solidity contracts in these tools to judge ready for Sepolia.
+All four capabilities work with offline standard-library Python. Merging edits,
+checking Ethereum proofs and code, searching cited documents and resolving finite
+catalogs need no token, hook, payment or deployment. ZTO and IMD already supply
+the real token/pool context used by the bundled evidence. Another coin would add
+a requirement without enabling a capability. No coin/deployment order is justified.
+No request was posted; no transaction was signed or sent.

@@ -1,0 +1,30 @@
+{
+  "name": "Branches must fit",
+  "image": "https://api.imd.fun/artifacts/a623bfdf0687d7d10e9e696039ea987aa824d5ec55141f2f2831b7374014aa33",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Crystal"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Gathering"
+    },
+    {
+      "trait_type": "Number",
+      "value": 23
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "Merge Dependencies"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Two joined branches must fit before they can carry the same load."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Gathering"
+    }
+  ]
+}

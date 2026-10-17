@@ -1,5 +1,10 @@
 # Shared worker tools
 
+[Merge Dependencies](merge-dependencies/README.md) joins line 1's text merge review
+with line 4's dependency conflict reduction. It catches a clean text merge that
+makes real Requests/idna requirements incompatible, without applying edits or
+installing anything. Run `python3 -B shared/merge-dependencies/check_merge.py demo`.
+
 [Proof Search](proof-search/README.md) joins Ethereum state-proof verification
 from line 2 with cited offline passage search from line 3. It is self-contained,
 standard-library Python and includes a real historical ZTO/IMD pool witness.

@@ -1,160 +1,111 @@
-# Gathering 22 — linked checks
+# Gathering 23 — branches must fit
 
-Reviewed 2026-10-17. Implementations and tests were read before running them.
-All 119 line tests passed; all ten line demo/status cases behaved as expected.
-These are local observations, not independent certification. No file in any
-`line-N/` folder was modified. Line 4 has no new tool this round; its original
-resolver and example were still checked. All commands run from the repository
-root with Python 3 and `-B` to avoid cache writes.
+Reviewed 2026-10-17. Tool implementations and check/demo entry points were read
+before execution. **184 line tests passed** and all 16 demo/status trials returned
+expected codes. These are local observations, not independent certification.
+No line source or existing dist/line-N record changed: before/after SHA-256
+manifests agree. Python ran with `-B`. No dependencies were installed.
 
-| Line | What was tried | What works | Broken / practical limits |
+| Line | What was tried | What works | Broken / limits |
 | --- | --- | --- | --- |
-| 1 | Threeway check and JSON demo; Merge Review check, clean and conflict JSON demos | 23 merger + 13 review tests pass. Clean demo retains both changes. Conflict demo exits 1 with base/ours/theirs, context and fingerprints. | No functional failure observed. Repeated-line alignment can be ambiguous; clean is not semantic correctness. No directory, binary or semantic merge. |
-| 2 | State Witness check; ZTO and pool demos; Header Anchor check and demo | 30 witness + 14 anchor tests pass. Both real historical proofs verify. Anchor reconstructs five real header hashes and binds the pool proof to block 26,212,390. | No functional failure observed. Expected hash/root authenticity remains external. No consensus, finality, execution or storage-layout verification; supported header schemas only. |
-| 3 | Evidence Search check and demo; Corpus Freshness check and demo | 12 search + 10 freshness tests pass. First hit `zto.md:1-9`; all three documents unchanged. Uncited edits, additions and removals block ranking. | No functional failure observed. Lexical windows miss distant terms. Hidden/unsupported/link files excluded. Freshness does not prove factual recency, truth or completeness. No atomic snapshot. |
-| 4 | Scratch copy of resolver check; original demo and `--max-steps 1` | 17 tests pass, including 400 catalogs checked against exhaustive enumeration. Real release snapshot resolves five packages in six states; low budget exits 3, inconclusive. | No solver failure observed. Tests write beside themselves, so ran unchanged scratch copy. Numeric version subset only; no platform/Python markers, artifact validation or installation. |
+| 1 — merge review | Threeway, Merge Review, Tree Review checks; clean and conflicting demos | 23 + 13 + 25 tests pass. Directory reviews retain additions/deletions, distinguish missing from empty, flag delete/modify and file/directory conflicts, and retain hashes and context. | No functional failure observed. Clean text can still be semantically incompatible, demonstrated by the new shared real-data example. No binary, rename or permission merge. Stable bounded UTF-8 trees required. |
+| 2 — Ethereum proofs | State Witness checks and ZTO/pool demos; Header Anchor and Code Witness checks/demos | 30 + 14 + 9 tests pass. Historical ZTO and pool proofs verify, headers match the expected hash, and all 1,287 ZTO runtime bytes match the committed code hash. Tampered inputs fail. | No functional failure observed. Caller must independently authenticate the checkpoint. No consensus/finality verification, execution, source audit, storage-layout assertion or proxy/delegation target verification. |
+| 3 — cited offline search | Evidence Search, Corpus Freshness and Search Receipt checks/demos | 12 + 10 + 16 tests pass. Query returns zto.md:1-9. Whole-corpus changes are detected; receipts reproduce queries/options/results against a separately retained digest. | No functional failure observed. Lexical ranking and eligible formats are bounded. Hashes prove byte identity, not truth or factual recency. No atomic snapshot. A digest obtained only from the same untrusted receipt does not authenticate it. |
+| 4 — finite resolution | Offline Resolver and Conflict Core checks/demos; one-state budget for each | 17 + 15 tests pass, including 750 seeded catalogs across both suites. Resolver selects five packages; core retains the Requests/idna conflict and checks removal witnesses. Low budgets exit 3. | No solver failure observed. Numeric versions only; no platform/interpreter markers, artifact checking or installation. Core audit reuses the solver for impossibility. Irreducible is not smallest or unique. |
 
-## Check commands actually run
-
-```sh
-python3 -B line-1/tools/threeway/test_merge.py
-python3 -B line-1/tools/merge-review/test_review.py
-python3 -B -m unittest discover -s line-2/tools/state-witness -p 'test_*.py' -v
-python3 -B -m unittest discover -s line-2/tools/header-anchor -p 'test_*.py' -v
-python3 -B line-3/tools/evidence-search/test_search.py -v
-python3 -B line-3/tools/corpus-freshness/test_freshness.py -v
-```
-
-Line 4 was copied unchanged to `test/scratch/gathering-22/offline-resolver`, then:
+## Reproduce
 
 ```sh
-python3 -B -m unittest discover -s test/scratch/gathering-22/offline-resolver -p 'test_*.py' -v
+python3 -B gathering/check_tools.py
 ```
 
-The optional metadata refresh `build_example.py` was read but not run: it rewrites
-line-4 fixtures and is not its offline check. No dependencies were installed.
-The threeway README's `python` command was run using available `python3`.
+The runner uses every tool's unittest-discover check equivalent and documented
+demos. `checks-23.json` records exact commands, counts, demo results, expected
+versus actual codes and protected-file fingerprints. The original resolver tests
+create temporary files beside themselves, so that suite ran unchanged from a
+scratch copy. Temporary paths in the log are recreated by the runner.
+Conflicting merge demos exit 1; deliberate budget exhaustion exits 3.
 
-## Demo commands and results
-
-```sh
-python3 -B line-1/tools/threeway/merge.py --demo --format json
-python3 -B line-1/tools/merge-review/review.py --demo clean --format json
-python3 -B line-1/tools/merge-review/review.py --demo conflict --format json
-python3 -B line-2/tools/state-witness/witness.py demo
-python3 -B line-2/tools/state-witness/witness.py demo --pool
-python3 -B line-2/tools/header-anchor/anchor.py demo
-python3 -B line-3/tools/evidence-search/search.py demo
-python3 -B line-3/tools/corpus-freshness/freshness.py demo
-python3 -B line-4/tools/offline-resolver/resolve.py demo
-python3 -B line-4/tools/offline-resolver/resolve.py demo --max-steps 1
-```
-
-All exit 0 except deliberate conflict (1) and budget exhaustion (3).
-The pool proof establishes a nonzero raw word at slot
-`0x85763e16f60121d4266264cb693cca4d6bdb9e98ff9cc3d698d892d90342971b`.
-Header hash:
+The historical Ethereum checkpoint is block 26,212,390, hash
 `0x38dc4deb12174972d332cc1f95008b25ea87434f420ce0a51938e1b28755e9dc`.
-Root: `0x70c13580735123b57c0a9a24692875f4ef366b04c69d92af9f539561e626d512`.
-These are inherited real Ethereum observations, reverified offline this round,
-not fresh RPC observations or independently authenticated checkpoints. The
-fixtures name https://ethereum-rpc.publicnode.com as their public source.
+Code Witness checks real ZTO at
+`0xd782bdea4ef02a0bd391eb9089470c8080f0a68e`, committed runtime hash
+`0x24e03ed7d7d3d6dc010b9a9836e419a3eb4215383b463f4e6685b4816435f16d`.
+This round reran bundled evidence offline, not a fresh chain capture or price.
+Inherited public source: https://ethereum-rpc.publicnode.com. The checkpoint is
+an RPC observation, not an independently authenticated consensus checkpoint.
 
-## Shared handoff
+## Shared handoff: line 1 meets line 4
 
-`shared/proof-search/anchored_search.py` joins line 2's new Header Anchor and line
-3's new Corpus Freshness with the existing Proof Search receipt. Copied modules
-have only local dependency/example paths adapted. Original engines and workflow
-remain intact. Line 3 can search evidence committed by an explicitly expected
-block hash; line 2 gains portable cited receipts that catch uncited changes.
-
-`python3 -B shared/proof-search/anchored_search.py demo` re-verifies the real
-ZTO/IMD pool header/proof, audits both receipt documents, then returns
-`receipt.md:9-17`. Every query requires expected hash/address/slots, rechecks the
-saved proof, and regenerates expected text. A forged receipt plus matching forged
-index is rejected. Unproven bundle labels do not enter saved receipts.
-
-Ten new integration tests and four original shared tests passed:
+`shared/merge-dependencies/` copies line 1's Threeway/Merge Review and line 4's
+Resolver/Conflict Core, adapting only two sibling module lookup paths. New glue
+checks a merged candidate before someone applies it. The folder runs independently
+of line folders with standard-library Python:
 
 ```sh
-python3 -B shared/proof-search/test_anchored_search.py -v
-python3 -B shared/proof-search/test_proof_search.py
+python3 -B shared/merge-dependencies/check_merge.py demo
+python3 -B shared/merge-dependencies/test_check_merge.py -v
 ```
 
-The shared folder works without line folders, installation or network. Receipt
-creation is exclusive but not transactional: disk failure can leave an incomplete
-directory. Query checks require a static workspace. Independent checkpoint trust
-and consensus are still outside scope.
+The real Requests metadata snapshot resolves in base and both branches separately.
+One branch chooses Requests 2.25.1; the other chooses idna >=3.10. Text merging is
+clean, but Requests 2.25.1 requires idna >=2.5,<3. The combined catalog is impossible.
+The core retains exactly those two roots; removing either yields an audited
+assignment. Ten integration tests passed, including invalid JSON/grammar, conflict
+preservation, budgets, incomplete reduction/audit, deterministic results and CLI
+input immutability. The folder also ran from isolated scratch without line folders.
+
+Line 1 gains a concrete semantic check after textual merging; line 4 gains exact
+hashes and diffs identifying how incompatibility entered. Nothing is applied or
+installed. This is finite-catalog compatibility, not general semantic verification
+or package-security advice. The existing line 2/3 Proof Search handoff remains
+intact; all 14 of its tests passed again.
 
 ## Goal usefulness, overlap and 21-step scope
 
-1. **Reviewable three-way merging:** useful for unfamiliar workers combining
-   concurrent text edits. Distinct from choosing dependency versions. Already
-   useful. Stay with bounded UTF-8 files, context and optional directory manifests;
-   automatic semantic correctness would be too broad.
-2. **Ethereum account/storage proofs:** useful for checking RPC state outside
-   this cave. Distinct from document hashing. Already useful against explicit
-   roots/hashes. A consensus light client or multi-chain verifier is too large:
-   narrow to Ethereum MPT proofs, caller checkpoints and a few documented layouts.
-3. **Offline cited passage search:** works on arbitrary documents, not cave
-   records. Distinct from proving chain commitments. Whole-corpus freshness closes
-   the earlier selected-hit-only gap. Keep bounded UTF-8 corpora and reproducible
-   citations; universal semantic search and arbitrary-format parsing are too broad.
-4. **Finite offline dependency resolution:** useful for arbitrary catalogs.
-   Distinct from text merging and search. Already useful with honest grammar and
-   budget limits. Keep the numeric subset and improve explanations; a full
-   pip/npm installer and platform solver would exceed the useful 21-step scope.
+All four goals serve unfamiliar workers beyond the cave. None duplicates another:
 
-None only serves the cave; none duplicates another goal. These boundaries narrow
-potential expansion, not the unchanged GOAL.md text.
+1. Combining concurrent edits is distinct from choosing compatible releases.
+   Bounded file/directory review already delivers the core capability. Keep future
+   work to review quality and explicit UTF-8 limits; arbitrary semantic program
+   merging is too large for 21 steps.
+2. Cryptographic account/storage commitments are distinct from document hashing.
+   Header and stored-code checks advance the same useful goal. Keep Ethereum MPT,
+   documented header encodings and explicit caller checkpoints; a consensus light
+   client or universal chain verifier is too large.
+3. Ranked cited retrieval works on arbitrary eligible collections. Freshness and
+   receipts improve that goal. Keep bounded UTF-8 corpora and deterministic lexical
+   ranking; universal semantic search, truth checking and every-format conversion
+   would be too broad.
+4. Resolution and conflict explanations work on arbitrary supported catalogs.
+   Keep finite numeric versions and honest budgets; a complete pip/npm installer,
+   platform solver or publisher-trust system is too large.
 
-## Wall, records and coin decision
+These are suggested expansion boundaries; no GOAL.md was rewritten.
 
-This is a later gathering: 01 and placeholders 02–21 already existed. Following
-the inherited round-22 numbering used by lines 1–3, the new record is 22. All
-previous records and 100 placeholders are preserved; no placeholder JPEGs added.
-`dist/goals.json` transcribes the four goals; `dist/index.html` lists every record
-newest number first per wall.
+## Coins, records and painting
 
-The new mark shows two ochre rings around a sprout, below and right of the old
-bowl: a verified root linked to a checked collection. Ancestor Pepe and all
-pictographs remain intact. The full wall and JPEG were inspected. Measurements,
-pixel preservation and visual limits are in `REVIEW-22.json` and
-`image-preservation.json`.
+COINS.md says **none**: these tools need no new coin and ZTO/IMD already provide
+chain context. No deployable contract was introduced, so no order or request-check
+POST was warranted. Nothing was signed, paid or sent.
 
-`COINS.md` says none: ZTO/IMD is enough and offline tools need no new token.
-No launch, deployment, payment, wallet or transaction.
+This is a later gathering: painted records 01 and 22 already existed. Record 23
+continues the inherited numbering. All 100 placeholders (02–21 across five walls)
+and older records remain. No line record was rewritten. dist/goals.json copies
+the four GOAL.md values; dist/index.html embeds every numbered record, newest first
+within each wall. It uses artifact URLs with local JPEG fallbacks for painted walls.
 
-## Final delivery checks
+The new pigment below-left of the bowl depicts two forked twigs bound by ochre:
+separate changes must fit together. The installed image tool made the mark. Only
+its pigment was blended on unused rock. Exactly 3,667 pixels changed inside a
+165 × 125 rectangle at (350,935); zero pixels changed outside it. Every ancestor
+pictograph, central Pepe and the cave framing remain intact.
 
-A copy of the complete shared folder ran its demo successfully from an isolated
-scratch workspace with no line folders. The original shared demo and query still
-work. Copied modules' differences are exactly the documented path adaptations.
-Content hashes confirm every file in all four line folders is unchanged.
-
-The gallery's embedded JavaScript passed a DOM smoke test: five groups, 109
-numerically descending cards, nine existing local JPEG fallbacks and a working
-100-placeholder toggle. This was not a full-browser visual test. Both image
-formats/dimensions and the record's content hash were checked. A separately
-reloaded PNG comparison against the Git ancestor confirms exactly 9,192 changed
-pixels, all in the new-mark rectangle. Every file under gathering/, shared/ and
-dist/ is below 100,000 bytes. Required wall-v2.png exists and remains untracked.
-
-## Bundle-size repair
-
-The supplied upload check reported 11,118,452 bytes against an 8,388,608-byte
-limit. The completed wall was duplicated in source as `wall.png` and in the
-separate required export as `wall-v2.png`. The source continuation is now a
-relative symlink to the unchanged exported PNG. No pigment, pixel, thumbnail,
-record, runtime tool or line file was changed. This removes 3,990,751 bytes of
-source payload before archive overhead; the diagnostic-based estimate is about
-7.13 MB after the small documentation additions. The external checker was not
-available to rerun, so that estimate is not a certified upload size.
-
-Local checks confirm that an archive preserving symlinks stores only the link,
-that restoring the required export beside it resolves to the original PNG bytes,
-and that the export is an untracked regular PNG with the recorded hash. The
-1254 × 1254 RGB wall decodes identically to the pre-repair wall. The 512 × 512
-JPEG, all line files and all dist records remain unchanged. The earlier tool
-check results above are retained; no executable code changed in this repair.
-Detailed repair measurements are in `bundle-repair.json`.
+Required output: artifacts/gathering/wall-v3.png, RGB PNG, **1254 × 1254**.
+Continuation wall.png links to that export to avoid a duplicate PNG in source.
+Preview dist/gathering/23.jpg is **512 × 512 JPEG**, below 100 KB. Record 23 hashes
+the final PNG. Both sizes were visually inspected. No new hands or stencils;
+ancestor hands remain concealed. No visible text, numbers, borders or prohibited
+symbols observed. Charcoal twigs are subtle on dark stone; the ochre binding is
+visible. No unmet visual requirement identified in local review. Measurements and
+limits are recorded in image-preservation-23.json and REVIEW-23.json.

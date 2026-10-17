@@ -1,0 +1,55 @@
+{
+  "round": 23,
+  "line_tests": 184,
+  "existing_shared_tests": 14,
+  "new_integration_tests": 10,
+  "total_tests": 208,
+  "demo_status_trials": 16,
+  "all_checks_passed": true,
+  "line_sources_and_records_unchanged": true,
+  "self_contained_shared_demo": "passed from isolated scratch workspace",
+  "copied_engines": "byte-identical except two documented module lookup expressions",
+  "gallery": {
+    "groups": 5,
+    "records": 114,
+    "placeholders": 100,
+    "painted": 14,
+    "dom_smoke": "passed",
+    "full_browser_test": false
+  },
+  "wall": {
+    "path": "artifacts/gathering/wall-v3.png",
+    "sha256": "a623bfdf0687d7d10e9e696039ea987aa824d5ec55141f2f2831b7374014aa33",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "bytes": 3991984,
+    "changed_pixels": 3667,
+    "changed_pixels_outside_new_mark": 0,
+    "ancestors_preserved": true
+  },
+  "preview": {
+    "path": "dist/gathering/23.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 62724
+  },
+  "visual_review": {
+    "full_wall_and_thumbnail_inspected": true,
+    "new_hands_or_stencils": 0,
+    "ancestor_hands": "concealed",
+    "visible_text_numbers_borders": "none observed",
+    "limitation": "Thin charcoal twigs are subtle on dark rock; ochre binding remains visible. Visual review is local judgment.",
+    "unmet_visual_requirements": []
+  },
+  "required_export_untracked": true,
+  "new_coin": "none",
+  "network_or_transactions": "none",
+  "all_source_files_below_100KB": true
+}
